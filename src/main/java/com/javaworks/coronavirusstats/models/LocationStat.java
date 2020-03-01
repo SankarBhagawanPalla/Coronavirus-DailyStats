@@ -5,6 +5,7 @@ public class LocationStat {
     private String State;
     private String Country;
     private int latestTotal;
+    private int changefromYesterday;
 
     public String getState() {
         return State;
@@ -28,6 +29,14 @@ public class LocationStat {
 
     public void setLatestTotal(int latestTotal) {
         this.latestTotal = latestTotal;
+    }
+
+    public int getChangefromYesterday() {
+        return changefromYesterday;
+    }
+
+    public void setChangefromYesterday(int changefromYesterday) {
+        this.changefromYesterday = changefromYesterday;
     }
 
     @Override

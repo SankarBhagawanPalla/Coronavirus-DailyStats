@@ -45,8 +45,8 @@ public class DataService {
             locationStat.setCountry(record.get("Country/Region"));
             locationStat.setState(record.get("Province/State"));
             locationStat.setLatestTotal(Integer.parseInt(record.get(record.size()-1)));
+            locationStat.setChangefromYesterday(Integer.parseInt(record.get(record.size()-1))- Integer.parseInt(record.get(record.size()-2)));
             newStats.add(locationStat);
-            System.out.println(locationStat);
         }
         this.allStats = newStats;
     }

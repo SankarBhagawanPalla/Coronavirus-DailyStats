@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Corona Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<table>
+
+<div class="container">
+<h1>Coronavirus Tracker Application</h1>
+
+<div class="jumbotron">
+      <h1 class="display-4" th:text="${total}"></h1>
+      <p class="lead">Total cases Confirmed</p>
+      <hr class="my-4">
+      <p>
+          <span>New cases confirmed since Yesterday:</span>
+          <span th:text="${changetotal}"></span>
+      </p>
+</div>
+<h4>Location wise cases confirmed as of today</h4>
+<table class="table">
     <thead>
     <tr>
         <th>State</th>
         <th>Country</th>
         <th>Count</th>
+        <th>Changes since last day</th>
     </tr>
     </thead>
     <tbody>
@@ -18,8 +34,10 @@
         <td th:text="${stat.state}"></td>
         <td th:text="${stat.country}"></td>
         <td th:text="${stat.latestTotal}"></td>
+        <td th:text="${stat.changefromYesterday}"></td>
     </tr>
     </tbody>
 </table>
+</div>
 </body>
 </html>
